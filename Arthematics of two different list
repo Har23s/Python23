@@ -1,0 +1,32 @@
+class ListArithmetic:
+  def __init__(self, list1, list2):
+      self.list1 = list1
+      self.list2 = list2
+
+  def __add__(self, other):
+      return [x + y for x, y in zip(self.list1, other.list1)]
+
+  def __sub__(self, other):
+      return [x - y for x, y in zip(self.list1, other.list2)]
+
+  def __mul__(self, other):
+      return [x * y for x, y in zip(self.list1, other.list1)]
+
+  def __floordiv__(self, other):
+      return [x // y for x, y in zip(self.list1, other.list2)]
+
+def main():
+  list1 = list(map(int, input("Enter elements of the first list separated by space: ").split()))
+  list2 = list(map(int, input("Enter elements of the second list separated by space: ").split()))
+
+  la = ListArithmetic(list1, list2)
+
+  print("List 1:", la.list1)
+  print("List 2:", la.list2)
+  print("Addition:", la + la)
+  print("Subtraction:", la - la)
+  print("Multiplication:", la * la)
+  print("Floor division:", la // la)
+
+if __name__ == "__main__":
+  main()
