@@ -1,0 +1,37 @@
+class STUDENT:
+  def __init__(self, usn, name, age):
+      self.usn = usn
+      self.name = name
+      self.age = age
+
+class Derived1(STUDENT):
+  def __init__(self, usn, name, age, semester, subject1, subject2, subject3, subject4, subject5):
+      super().__init__(usn, name, age)
+      self.semester = semester
+      self.subject1 = subject1
+      self.subject2 = subject2
+
+
+      self.subject3 = subject3
+      self.subject4 = subject4
+      self.subject5 = subject5
+
+def calculate_percentage(student):
+  total_marks = student.subject1 + student.subject2 + student.subject3 + student.subject4 + student.subject5
+  print(f"Total marks obtained: {total_marks}")
+  percentage = (total_marks / 500) * 100
+  return percentage
+
+# Input student details
+usn = input("Enter USN: ")
+name = input("Enter Name: ")
+age = int(input("Enter Age: "))
+semester = int(input("Enter Semester: "))
+subjects = [int(x) for x in input("Enter marks for 5 subjects separated by space: ").split()]
+
+# Create Derived2 object
+student = Derived1(usn, name, age, semester, subjects[0], subjects[1], subjects[2], subjects[3], subjects[4])
+
+# Calculate and display percentage
+percentage = calculate_percentage(student)
+print(f"Percentage for {student.name} (USN: {student.usn}) is: {percentage}%")
