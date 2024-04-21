@@ -1,0 +1,21 @@
+class HelloWorld:
+  def Hello(self, name=None, age=None):
+      if name is None and age is None:
+          print("Hello")
+      elif name is not None and age is None:
+          print(f"Hello with {name}")
+      elif name is not None and age is not None:
+          print(f"Hello with {name} & {age}")
+
+# Test Cases
+# Case A: No arguments
+hello_world = HelloWorld()
+hello_world.Hello()
+
+# Case B: One argument
+hello_world = HelloWorld()
+hello_world.Hello("one arguement")
+
+# Case C: Two arguments
+hello_world = HelloWorld()
+hello_world.Hello("two arguement", 25)
