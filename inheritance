@@ -1,0 +1,68 @@
+class Student:
+  def __init__(self, usn, name, age):
+      self.usn = usn
+      self.name = name
+      self.age = age
+
+  def display(self):
+      print(f"USN: {self.usn}")
+      print(f"Name: {self.name}")
+      print(f"Age: {self.age}")
+
+class UGStudent(Student):
+  def __init__(self, usn, name, age, semester, fees):
+      super().__init__(usn, name, age)
+      self.semester = semester
+      self.fees = fees
+
+  def display(self):
+      super().display()
+      print(f"Semester: {self.semester}")
+      print(f"Fees: {self.fees}")
+
+class PGStudent(Student):
+  def __init__(self, usn, name, age, semester, fees, stipend):
+      super().__init__(usn, name, age)
+      self.semester = semester
+      self.fees = fees
+      self.stipend = stipend
+
+  def display(self):
+      super().display()
+      print(f"Semester: {self.semester}")
+      print(f"Fees: {self.fees}")
+      print(f"Stipend: {self.stipend}")
+
+def test_multiple_students():
+  num_students = int(input("Enter the number of students: "))
+  students = []
+
+  for i in range(num_students):
+      print(f"\nEnter details for Student {i+1}:")
+      usn = input("Enter USN: ")
+      name = input("Enter Name: ")
+      age = int(input("Enter Age: "))
+      student_type = input("Enter student type (UG/PG): ")
+
+      if student_type.upper() == "UG":
+          semester = int(input("Enter Semester: "))
+          fees = float(input("Enter Fees: "))
+          student = UGStudent(usn, name, age, semester, fees)
+      elif student_type.upper() == "PG":
+          semester = int(input("Enter Semester: "))
+          fees = float(input("Enter Fees: "))
+          stipend = float(input("Enter Stipend: "))
+          student = PGStudent(usn, name, age, semester, fees, stipend)
+      else:
+          print("Invalid student type. Skipping this student.")
+          continue
+
+      students.append(student)
+
+  print("\nStudent Details:")
+  for student in students:
+      student.display()
+      print()
+
+if __name__ == "__main__":
+  test_multiple_students()
