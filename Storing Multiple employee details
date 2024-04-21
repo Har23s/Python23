@@ -1,0 +1,63 @@
+class Employee:
+  def __init__(self, first, last, empid, pay):
+      self.first = first
+      self.last = last
+      self.empid = empid
+      self.pay = pay
+
+  def display(self):
+      print(f"First Name: {self.first}")
+      print(f"Last Name: {self.last}")
+      print(f"Employee ID: {self.empid}")
+      print(f"Pay: {self.pay}")
+
+class Developer(Employee):
+  def apply_raise(self):
+      self.pay = int(self.pay * 1.10)
+
+  def display(self):
+      super().display()
+      print(f"New Pay: {self.pay}")
+
+class Manager(Employee):
+  def apply_raise(self):
+      self.pay = int(self.pay * 1.15)
+
+  def display(self):
+      super().display()
+      print(f"New Pay: {self.pay}")
+
+
+
+def test_multiple_employees():
+  num_employees = int(input("Enter the number of employees: "))
+  employees = []
+
+  for _ in range(num_employees):
+      print("\nEnter employee details:")
+      first_name = input("First Name: ")
+      last_name = input("Last Name: ")
+      emp_id = int(input("Employee ID: "))
+      pay = float(input("Pay: "))
+      employee_type = input("Employee Type (Developer/Manager): ")
+
+      if employee_type.upper() == "DEVELOPER":
+          employee = Developer(first_name, last_name, emp_id, pay)
+      elif employee_type.upper() == "MANAGER":
+          employee = Manager(first_name, last_name, emp_id, pay)
+      else:
+          print("Invalid employee type. Skipping this employee.")
+          continue
+
+      employee.apply_raise()
+      employees.append(employee)
+
+  print("\nEmployee Details:")
+  for employee in employees:
+      employee.display()
+      print()
+
+if __name__ == "__main__":
+  
+  print("  Employees")
+  test_multiple_employees()
