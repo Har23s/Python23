@@ -12,10 +12,10 @@ class HelloWorld:
 hello_world = HelloWorld()
 hello_world.Hello()
 
-# Case B: One argument
+# Case B: One argumentt
 hello_world = HelloWorld()
 hello_world.Hello("one arguement")
 
-# Case C: Two arguments
+# Case C: Two argumentss
 hello_world = HelloWorld()
 hello_world.Hello("two arguement", 25)
