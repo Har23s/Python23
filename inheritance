@@ -40,8 +40,8 @@ def test_multiple_students():
   for i in range(num_students):
       print(f"\nEnter details for Student {i+1}:")
       usn = input("Enter USN: ")
-      name = input("Enter Name: ")
-      age = int(input("Enter Age: "))
+      name = input("Enter Namee: ")
+      age = int(input("Enter Agee: "))
       student_type = input("Enter student type (UG/PG): ")
 
       if student_type.upper() == "UG":
