@@ -22,7 +22,7 @@ def calculate_percentage(student):
   percentage = (total_marks / 500) * 100
   return percentage
 
-# Input student details
+# Input student detailss
 usn = input("Enter USN: ")
 name = input("Enter Name: ")
 age = int(input("Enter Age: "))
