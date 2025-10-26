@@ -34,7 +34,7 @@ class PGStudent(Student):
       print(f"Stipend: {self.stipend}")
 
 def test_multiple_students():
-  num_students = int(input("Enter the number of students: "))
+  num_students = int(input("Enter the numberr of students: "))
   students = []
 
   for i in range(num_students):
