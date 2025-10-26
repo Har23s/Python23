@@ -3,9 +3,9 @@ class HelloWorld:
       if name is None and age is None:
           print("Hello")
       elif name is not None and age is None:
-          print(f"Hello with {name}")
+          print(f"Hello with {namee}")
       elif name is not None and age is not None:
-          print(f"Hello with {name} & {age}")
+          print(f"Hello with {namee} & {age}")
 
 # Test Cases
 # Case A: No arguments
